@@ -3,6 +3,10 @@
     <div class="outboxh1">
       <h1>{{ msg }}</h1>
       <h2 @click="jhtscreateEcharts">生成echarts曲线</h2>
+       <h2>
+        <span>fullPath:&nbsp;&nbsp;{{this.$route.fullPath}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span>path:&nbsp;&nbsp;{{this.$route.path}}</span>
+      </h2>
     </div>
     <div class="outboxecharts">
         <echarts1/>

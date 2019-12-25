@@ -6,10 +6,19 @@
     </h1>
     <div class="tabsoutbox">
       <div class="tabsoutbox_inbox">
-        <router-link
+        <!-- <router-link
           v-for="(item,index) in routerstabrooms"
           :key="index"
           :to="item.path"
+          replace
+          active-class="activeClass"
+          class="routerLinkStyle"
+          tag="div"
+        >{{item.name}}</router-link> -->
+        <router-link
+          v-for="(item,index) in routerstabrooms"
+          :key="index"
+          :to="{path: item.path,params: { id: 123 }}"
           replace
           active-class="activeClass"
           class="routerLinkStyle"

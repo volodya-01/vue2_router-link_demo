@@ -3,16 +3,20 @@
     <div class="outboxh1">
       <h1>{{ msg }}</h1>
       <h2 @click="cjgscreateEcharts">生成echarts曲线</h2>
+      <h2>
+        <span>fullPath:&nbsp;&nbsp;{{this.$route.fullPath}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span>path:&nbsp;&nbsp;{{this.$route.path}}</span>
+      </h2>
     </div>
     <div class="outboxecharts">
-        <echarts1/>
-        <echarts2/>
+      <echarts1 />
+      <echarts2 />
     </div>
   </div>
 </template>
 
 <script>
-import Bus from "@/bus"
+import Bus from "@/bus";
 import echarts1 from "./cjgs/echarts1";
 import echarts2 from "./cjgs/echarts2";
 export default {
@@ -33,13 +37,13 @@ export default {
     cjgsgetadata() {
       this.$axios.post("/volodya/resdata").then(res => {
         console.log("%ccjgs-resdata", "color:red", res);
-        Bus.$emit('tocjgsecharts1',res.data)
+        Bus.$emit("tocjgsecharts1", res.data);
       });
     },
-    cjgscreateEcharts(){
-         this.$axios.post("/volodya/resdata2").then(res => {
+    cjgscreateEcharts() {
+      this.$axios.post("/volodya/resdata2").then(res => {
         console.log("%cjgs-cresdata2", "color:red", res);
-        Bus.$emit('tocjgsecharts2',res.data)
+        Bus.$emit("tocjgsecharts2", res.data);
       });
     }
   }
@@ -63,20 +67,20 @@ export default {
     align-items: center;
     width: vw(1920);
     height: vh(220);
-     h1 {
+    h1 {
       font-size: vh(46);
       font-weight: bold;
-       color: #42b983;
+      color: #42b983;
     }
-     h2 {
+    h2 {
       font-weight: bold;
-      margin-top:vh(20);
+      margin-top: vh(20);
       color: #fff;
       padding: vh(10) vw(20);
       background-color: #42b983;
-      cursor:pointer;
-      &:hover{
-         background-color: #52d399;
+      cursor: pointer;
+      &:hover {
+        background-color: #52d399;
       }
     }
   }
